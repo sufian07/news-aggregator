@@ -15,8 +15,9 @@ use App\Http\Controllers\ExampleController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
 Route::get('/example', ExampleController::class);
+require __DIR__.'/auth.php';

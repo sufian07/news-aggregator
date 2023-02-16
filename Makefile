@@ -1,5 +1,9 @@
 up:
 	docker-compose up -d
+	docker-compose exec api chown -R $USER:www-data storage
+	docker-compose exec api chown -R $USER:www-data bootstrap/cache
+	docker-compose exec api chmod -R 775 storage
+	docker-compose exec api chmod -R 775 bootstrap/cache
 	docker-compose exec front yarn start
 
 init:

@@ -1,7 +1,7 @@
 import axios from "axios";
-import { useState, VFC } from "react";
+import { useState, FC } from "react";
 
-export const ExampleComponent: VFC = () => {
+export const ExampleComponent: FC = () => {
     const [message, setMessage] = useState<string>("");
     axios.get("/api/example").then((res) => {
         setMessage(res.data.message);
